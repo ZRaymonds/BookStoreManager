@@ -1,0 +1,2 @@
+Presenter层：负责完成View和Model之间的交互，应用程序主要的程序逻辑在Presenter内实现，而且Presenter将Model和View完全分离
+所有的交互都发生在Presenter内部，具体业务逻辑全部交由Presenter接口实现类中进行处理。

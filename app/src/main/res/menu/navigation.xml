@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/book_city"
+        android:icon="@drawable/icon_bookcity"
+        android:title="@string/book_city" />
+
+    <item
+        android:id="@+id/book_self"
+        android:icon="@drawable/icon_bookself"
+        android:title="@string/book_self" />
+
+    <item
+        android:id="@+id/book_idea"
+        android:icon="@drawable/icon_idea"
+        android:title="@string/book_idea" />
+
+    <item
+        android:id="@+id/book_my"
+        android:icon="@drawable/icon_my"
+        android:title="@string/book_my" />
+
+</menu>
