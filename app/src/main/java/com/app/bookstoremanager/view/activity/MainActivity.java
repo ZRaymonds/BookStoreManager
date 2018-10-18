@@ -1,4 +1,4 @@
-package com.app.bookstoremanager.view.main;
+package com.app.bookstoremanager.view.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,24 +8,23 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.app.bookstoremanager.R;
-import com.app.bookstoremanager.view.bookcity.BookCityFragment;
-import com.app.bookstoremanager.view.bookidea.BookIdeaFragment;
-import com.app.bookstoremanager.view.bookmy.BookMyFragment;
-import com.app.bookstoremanager.view.bookself.BookSelfFragment;
-import com.roughike.bottombar.BottomBar;
+import com.app.bookstoremanager.view.fragment.BookCityFragment;
+import com.app.bookstoremanager.view.fragment.BookIdeaFragment;
+import com.app.bookstoremanager.view.fragment.BookMyFragment;
+import com.app.bookstoremanager.view.fragment.BookSelfFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
+@ContentView(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.mainContent)
+    @ViewInject(R.id.mainContent)
     FrameLayout mainContent;
 
-    @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
     private FragmentManager fragmentManager;
@@ -39,10 +38,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        x.view().inject(this);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        ButterKnife.bind(this);
         fragmentManager = getSupportFragmentManager();
 
         addFragment(bookSelfFragment);

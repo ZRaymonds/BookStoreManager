@@ -1,4 +1,4 @@
-package com.app.bookstoremanager.view.bookself;
+package com.app.bookstoremanager.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
