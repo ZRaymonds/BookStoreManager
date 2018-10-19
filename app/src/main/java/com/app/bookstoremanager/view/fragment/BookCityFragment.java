@@ -1,4 +1,4 @@
-package com.app.bookstoremanager.view.bookself;
+package com.app.bookstoremanager.view.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.app.bookstoremanager.R;
 
-public class BookSelfFragment extends Fragment {
+public class BookCityFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_book_self, container, false);
+        View view = inflater.inflate(R.layout.fragment_book_city, container, false);
         return view;
     }
 }
