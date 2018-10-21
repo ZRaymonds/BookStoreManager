@@ -9,13 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.base.BaseFragment;
 
-public class BookCityFragment extends Fragment {
+public class BookCityFragment extends BaseFragment {
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_book_city, container, false);
+    protected View initView(Bundle savedInstanceState) {
+        View view = View.inflate(mActivity,R.layout.fragment_book_city,null);
         return view;
     }
+
+    @Override
+    public int getLayoutResId() {
+        return R.layout.fragment_book_city;
+    }
+
 }

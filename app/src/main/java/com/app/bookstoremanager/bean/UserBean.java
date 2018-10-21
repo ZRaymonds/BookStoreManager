@@ -59,4 +59,15 @@ public class UserBean {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", id=" + id +
+                ", mobile_phone='" + mobile_phone + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

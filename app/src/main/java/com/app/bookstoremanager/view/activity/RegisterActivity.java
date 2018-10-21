@@ -11,33 +11,33 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.presenter.RegisterPresenter;
 import com.app.bookstoremanager.utils.LogUtil;
 import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.utils.VerifyUtil;
 import com.app.bookstoremanager.view.IRegisterView;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@ContentView(R.layout.activity_register)
-public class RegisterActivity extends AppCompatActivity implements IRegisterView {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-    @ViewInject(R.id.et_register_username)
+public class RegisterActivity extends BaseActivity implements IRegisterView {
+
+    @BindView(R.id.et_register_username)
     EditText et_register_username;
 
-    @ViewInject(R.id.et_register_password)
+    @BindView(R.id.et_register_password)
     EditText et_register_password;
 
-    @ViewInject(R.id.btn_register)
+    @BindView(R.id.btn_register)
     Button btn_register;
 
-    @ViewInject(R.id.back)
+    @BindView(R.id.back)
     ImageView back;
 
     private RegisterPresenter registerPresenter;
@@ -45,15 +45,18 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
     private Context mContext;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        x.view().inject(this);
+    protected void initData(Bundle savedInstanceState) {
         mContext = this;
         registerPresenter = new RegisterPresenter(this);
     }
 
-    @Event({R.id.btn_register,R.id.back})
-    private void onClick(View v) {
+    @Override
+    public int getLayoutResId() {
+        return R.layout.activity_register;
+    }
+
+    @OnClick({R.id.btn_register,R.id.back})
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_register:
                 if (VerifyUtil.isConnect(mContext)) {

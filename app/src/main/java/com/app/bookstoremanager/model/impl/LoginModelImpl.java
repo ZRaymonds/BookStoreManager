@@ -4,6 +4,7 @@ import com.app.bookstoremanager.bean.UserBean;
 import com.app.bookstoremanager.callBack.OnNetListener;
 import com.app.bookstoremanager.model.ILoginModel;
 import com.app.bookstoremanager.network.ServerApi;
+import com.app.bookstoremanager.utils.LogUtil;
 import com.app.bookstoremanager.utils.RetrofitHelper;
 
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class LoginModelImpl implements ILoginModel {
                     @Override
                     public void onNext(UserBean userBean) { //这里的userBean就是我们请求接口返回的实体类
                         onNetListener.onSuccess(userBean);
+                        LogUtil.e("TAG",userBean.toString());
                     }
                 });
     }

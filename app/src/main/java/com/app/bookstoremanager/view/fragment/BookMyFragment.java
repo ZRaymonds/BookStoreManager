@@ -1,21 +1,50 @@
 package com.app.bookstoremanager.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.base.BaseFragment;
+import com.app.bookstoremanager.view.activity.LoginActivity;
+import com.app.bookstoremanager.view.activity.SettingActivity;
 
-public class BookMyFragment extends Fragment {
 
-    @Nullable
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
+
+public class BookMyFragment extends BaseFragment {
+
+    @BindView(R.id.iv_loginView)
+    ImageView iv_loginView;
+
+    @BindView(R.id.iv_setting)
+    ImageView iv_setting;
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_book_my, container, false);
+    protected View initView(Bundle savedInstanceState) {
+        View view = View.inflate(mActivity,R.layout.fragment_book_my,null);
         return view;
     }
+
+    @Override
+    public int getLayoutResId() {
+        return R.layout.fragment_book_my;
+    }
+
+    @OnClick({R.id.iv_loginView,R.id.iv_setting})
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.iv_loginView:
+                startActivity(new Intent(mActivity,LoginActivity.class));
+                break;
+            case R.id.iv_setting:
+                startActivity(new Intent(mActivity,SettingActivity.class));
+                break;
+        }
+    }
+
 }

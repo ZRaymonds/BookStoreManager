@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.view.fragment.BookCityFragment;
@@ -15,16 +17,16 @@ import com.app.bookstoremanager.view.fragment.BookIdeaFragment;
 import com.app.bookstoremanager.view.fragment.BookMyFragment;
 import com.app.bookstoremanager.view.fragment.BookSelfFragment;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
 
-@ContentView(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    @ViewInject(R.id.mainContent)
+public class MainActivity extends FragmentActivity {
+
+    @BindView(R.id.mainContent)
     FrameLayout mainContent;
 
+    @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
     private FragmentManager fragmentManager;
@@ -34,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
     BookIdeaFragment bookIdeaFragment = new BookIdeaFragment();
     BookMyFragment bookMyFragment = new BookMyFragment();
 
+    private long lastBackTime = 0;
+    private long currentBackTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        x.view().inject(this);
-        navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fragmentManager = getSupportFragmentManager();
 
@@ -96,6 +100,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void hideFragment(Fragment fragment) {
         fragmentManager.beginTransaction().hide(fragment).commit();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            currentBackTime = System.currentTimeMillis();
+            if (currentBackTime - lastBackTime > 2 * 1000) {
+                Toast.makeText(this, "再按一次返回键退出", Toast.LENGTH_SHORT).show();
+                lastBackTime = currentBackTime;
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }

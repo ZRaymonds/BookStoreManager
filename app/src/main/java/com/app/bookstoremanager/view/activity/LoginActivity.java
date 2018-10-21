@@ -15,54 +15,52 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.presenter.LoginPresenter;
 import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.utils.VerifyUtil;
 import com.app.bookstoremanager.view.ILoginView;
 import com.app.bookstoremanager.widget.LoadingDialog;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@ContentView(R.layout.activity_login)
-public class LoginActivity extends AppCompatActivity implements ILoginView {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-    @ViewInject(R.id.LayoutName)
+public class LoginActivity extends BaseActivity implements ILoginView {
+
+    @BindView(R.id.LayoutName)
     TextInputLayout LayoutName;
 
-    @ViewInject(R.id.LayoutPassword)
+    @BindView(R.id.LayoutPassword)
     TextInputLayout LayoutPassword;
 
-    @ViewInject(R.id.et_login_username)
+    @BindView(R.id.et_login_username)
     EditText et_login_username;
 
-    @ViewInject(R.id.et_login_password)
+    @BindView(R.id.et_login_password)
     EditText et_login_password;
 
-    @ViewInject(R.id.tv_userRegister)
+    @BindView(R.id.tv_userRegister)
     TextView tv_userRegister;
 
-    @ViewInject(R.id.back)
+    @BindView(R.id.back)
     ImageView back;
 
-    @ViewInject(R.id.btn_login)
+    @BindView(R.id.btn_login)
     Button btn_login;
 
     private Context mContext;
 
     private LoadingDialog loadingDialog;
 
-    LoginPresenter loginPresenter;
+    private LoginPresenter loginPresenter;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        x.view().inject(this);
+    protected void initData(Bundle savedInstanceState) {
         mContext = this;
         loginPresenter = new LoginPresenter(this);
         initLoadDialog();
@@ -70,8 +68,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         onEffectPassword(getLgPassword());
     }
 
-    @Event({R.id.tv_userRegister, R.id.back, R.id.btn_login})
-    private void onClick(View v){
+    @Override
+    public int getLayoutResId() {
+        return R.layout.activity_login;
+    }
+
+    @OnClick({R.id.tv_userRegister, R.id.back, R.id.btn_login})
+    public void onClick(View v){
         switch (v.getId()){
             case R.id.tv_userRegister:
                 startActivity(new Intent(this, RegisterActivity.class));
@@ -93,7 +96,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     @Override
     public void showLoginSuccess(int code, String msg) {
-        ToastUtil.show(this,msg);
+        if (code == 200){
+            ToastUtil.show(this,msg);
+            finish();
+        }else {
+            ToastUtil.show(this,msg);
+        }
     }
 
     @Override
