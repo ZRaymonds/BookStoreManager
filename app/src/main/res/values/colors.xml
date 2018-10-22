@@ -9,6 +9,7 @@
     <color name="hintError">#FF0000</color>
     <color name="normal_color">#cdcdcd</color>
 
+    <color name="bg_library">#f1f1f1</color>
     <color name="tv_text_addshelf_nor">#ffffff</color>
     <color name="tv_text_addshelf_pre">#7891A5</color>
     <color name="tv_text_addshelf_disable">#7891A5</color>

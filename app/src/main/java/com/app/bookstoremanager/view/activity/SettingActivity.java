@@ -38,8 +38,8 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
     protected void initData(Bundle savedInstanceState) {
         updatePresenter = new UpdatePresenter(this);
         try {
-            tv_showVersion.setText("当前版本:"+getVersionName());
-        }catch (Exception e){
+            tv_showVersion.setText("当前版本:" + getVersionName());
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -50,8 +50,8 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
     }
 
     @OnClick(R.id.RLCheckSetting)
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.RLCheckSetting:
                 updatePresenter.getUpdate();
                 break;
@@ -91,7 +91,7 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
 
     @Override
     public void showMessage(UpdateInfo updateInfo) {
-        ToastUtil.show(this,updateInfo.getData().getList().toString());
+        ToastUtil.show(this, updateInfo.toString());
     }
 
 }
