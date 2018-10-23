@@ -46,5 +46,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/banner"
+        android:background="@color/base"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:textSize="16sp"
+        android:text="热情推荐"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv"
+        android:layout_marginTop="10dp">
+
+        <include layout="@layout/recommend_layout"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
