@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.bean.RecommendInfo;
+import com.app.bookstoremanager.utils.ToastUtil;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -28,13 +29,19 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recommend_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recommend_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.textView.setText(mBirdsList.get(position).getName());
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.show(mContext, mBirdsList.get(position).getName());
+            }
+        });
         Glide.with(mContext).load(mBirdsList.get(position).getImageUrl()).into(holder.imageView);
     }
 
@@ -43,10 +50,11 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecommendAdapter.MyVi
         return mBirdsList.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imageView;
         public TextView textView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             //适配器构造时只会用到实体类的get方法，用以获取相应的属性

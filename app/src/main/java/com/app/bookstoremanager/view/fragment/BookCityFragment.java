@@ -43,9 +43,6 @@ public class BookCityFragment extends BaseFragment implements OnBannerListener {
             "Honeycomb",
             "Ice Cream Sandwich",
             "Jelly Bean",
-            "KitKat",
-            "Lollipop",
-            "Marshmallow"
     };
     private final String imageUrls[] = {
             "http://hawksaloft.org/wp-content/uploads/2012/08/614612316_20090805-_mg_3411-rufous-hummingbird-5x7.jpg",
@@ -54,9 +51,6 @@ public class BookCityFragment extends BaseFragment implements OnBannerListener {
             "https://wallpapercave.com/wp/alkKAoC.jpg",
             "http://mosthdwallpapers.com/wp-content/uploads/2016/06/Gorgeous-Hummingbird-Wallpapers-For-Desktop.jpg",
             "http://naturecanada.ca/wp-content/uploads/2014/07/Ruby-throat-Hummingbird-shutterstock_1953533.jpg",
-            "http://images5.fanpop.com/image/photos/26100000/Hummingbird-hummingbirds-26167630-1024-740.jpg",
-            "https://farm5.staticflickr.com/4065/4698051727_5024cd4e6c_b.jpg",
-            "http://mosthdwallpapers.com/wp-content/uploads/2016/06/Beautiful-Hummingbird-HD-Photography.jpg",
     };
 
 
@@ -109,7 +103,7 @@ public class BookCityFragment extends BaseFragment implements OnBannerListener {
         mRecycleView.setHasFixedSize(true);
         mRecycleView.setLayoutManager(new GridLayoutManager(mActivity, 3));
         birdList = init();
-        myAdapter = new RecommendAdapter(mActivity,birdList);
+        myAdapter = new RecommendAdapter(mActivity, birdList);
         mRecycleView.setAdapter(myAdapter);
 
     }
@@ -130,7 +124,7 @@ public class BookCityFragment extends BaseFragment implements OnBannerListener {
     //轮播图的监听方法
     @Override
     public void OnBannerClick(int position) {
-        ToastUtil.show(mActivity,"你点了第" + position + "张轮播图");
+        ToastUtil.show(mActivity, "你点了第" + position + "张轮播图");
         Log.i("tag", "你点了第" + position + "张轮播图");
     }
 
