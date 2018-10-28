@@ -24,4 +24,5 @@ public class RecommendInfo {
     public String getImageUrl() {
         return imageUrl;
     }
+
 }

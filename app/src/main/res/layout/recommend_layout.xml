@@ -1,12 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleview"
+    <FrameLayout
+        android:id="@+id/SearchFragLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingLeft="40dp"
+        android:paddingTop="15dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="15dp">
+
+        <FrameLayout
+            android:id="@+id/fl_search"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:transitionName="to_search">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_search_content"
+                android:gravity="center"
+                android:hint="搜书名、作者"
+                android:textColorHint="#6f6f6f"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_search_nor" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/SearchFragLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/banner"
+        android:layout_marginTop="5dp"
+        android:background="@color/base" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="热情推荐"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="换一批"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
