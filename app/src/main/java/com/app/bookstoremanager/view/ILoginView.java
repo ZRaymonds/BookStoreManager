@@ -13,6 +13,7 @@ public interface ILoginView {
 
     //显示和隐藏加载圈
     void showLoading();
+
     void hideLoading();
 
 }

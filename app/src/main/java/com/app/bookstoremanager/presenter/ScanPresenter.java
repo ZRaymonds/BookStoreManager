@@ -51,11 +51,11 @@ public class ScanPresenter extends ScanContact.Presenter {
             list.add(bean);
         }
 
-        Log.i("AAA","111111111111111111111");
+        Log.i("AAA", "111111111111111111111");
         mModel.addBookList(list).subscribe(new Consumer<Boolean>() {
             @Override
             public void accept(@NonNull Boolean aBoolean) throws Exception {
-                Log.i("AAA","2222222222222222222");
+                Log.i("AAA", "2222222222222222222");
                 mView.toShelf();
             }
         });
@@ -70,13 +70,16 @@ public class ScanPresenter extends ScanContact.Presenter {
             public void onSubscribe(@NonNull Disposable d) {
                 mDisposable = d;
             }
+
             @Override
             public void onNext(@NonNull Long aLong) {
                 mView.refresh(mModel.getTotalNum());
             }
+
             @Override
             public void onError(@NonNull Throwable e) {
             }
+
             @Override
             public void onComplete() {
             }
@@ -111,9 +114,9 @@ public class ScanPresenter extends ScanContact.Presenter {
 
     @Override
     public void onStopScanBooks() {
-        Log.i("AAA","onStopScanBooks");
+        Log.i("AAA", "onStopScanBooks");
         mSubscription.cancel();
-        Log.i("AAA","cancel");
+        Log.i("AAA", "cancel");
         mDisposable.dispose();
         mView.whenStopScan();
         mView.refresh(mModel.getTotalNum());

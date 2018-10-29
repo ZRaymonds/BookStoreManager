@@ -40,7 +40,7 @@ public class LoginModelImpl implements ILoginModel {
                     @Override
                     public void onNext(UserBean userBean) { //这里的userBean就是我们请求接口返回的实体类
                         onNetListener.onSuccess(userBean);
-                        LogUtil.e("TAG",userBean.toString());
+                        LogUtil.e("TAG", userBean.toString());
                     }
                 });
     }

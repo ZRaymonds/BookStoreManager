@@ -37,7 +37,7 @@ public class ImportPresenter extends ImportContact.Presenter {
             //找出最后一个"."的位置，以此隔离出名字和后缀
             int i = file.getName().lastIndexOf(".");
             bean.setBookId(CustomUUId.get().nextId());
-            bean.setBookName(file.getName().substring(0,i));
+            bean.setBookName(file.getName().substring(0, i));
             bean.setMBookType(1);
             bean.setFileSize(FileUtils.getFileSize(file));
 //            bean.setLength(file.length());
@@ -57,7 +57,7 @@ public class ImportPresenter extends ImportContact.Presenter {
     public void onGetFileList(File rootFile) {
 
         List<File> files = mModel.getFileList(rootFile);
-        if(mBookDao == null){
+        if (mBookDao == null) {
             mBookDao = new BookDao();
         }
         mBooks = mBookDao.loadAll();
@@ -65,22 +65,22 @@ public class ImportPresenter extends ImportContact.Presenter {
         int num = 0;
         int importableNum = 0;
         for (File file : files) {
-            ScanBook scanBook = new ScanBook(file,false);
-            if (file.isFile()){
+            ScanBook scanBook = new ScanBook(file, false);
+            if (file.isFile()) {
                 ++num;
-                for(BookBean bookBean:mBooks){
-                    if(bookBean.getPath().equals(file.getAbsolutePath())){
+                for (BookBean bookBean : mBooks) {
+                    if (bookBean.getPath().equals(file.getAbsolutePath())) {
                         scanBook.setImported(true);
                     }
                 }
 
-                if(!scanBook.isImported()){
+                if (!scanBook.isImported()) {
                     ++importableNum;
                 }
             }
             scanBooks.add(scanBook);
         }
-        mView.showScanBookList(scanBooks,num,importableNum);
+        mView.showScanBookList(scanBooks, num, importableNum);
     }
 
     @Override

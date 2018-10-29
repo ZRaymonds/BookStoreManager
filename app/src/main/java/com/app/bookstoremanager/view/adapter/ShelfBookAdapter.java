@@ -37,9 +37,11 @@ public class ShelfBookAdapter extends RecyclerView.Adapter<ShelfBookAdapter.View
     public interface OnClickCallBack {
         //长按回调
         void OnLongClick();
+
         void OnBookClick(BookBean bookBean);
 
         void selectBook(BookBean bookBean);
+
         void unSelectBook(BookBean bookBean);
     }
 
@@ -93,7 +95,8 @@ public class ShelfBookAdapter extends RecyclerView.Adapter<ShelfBookAdapter.View
 
     /**
      * 当处于长按状态，选择某本书
-     * @param holder 选择的item的holder
+     *
+     * @param holder   选择的item的holder
      * @param position 选择的item的位置
      */
     private void select(ViewHolder holder, Integer position) {
@@ -117,6 +120,7 @@ public class ShelfBookAdapter extends RecyclerView.Adapter<ShelfBookAdapter.View
 
     /**
      * 根据每个数据的状态判断应该显示什么图标
+     *
      * @param holder
      * @param position
      */
@@ -148,11 +152,12 @@ public class ShelfBookAdapter extends RecyclerView.Adapter<ShelfBookAdapter.View
 
     @Override
     public int getItemCount() {
-        return mBooks==null?0:mBooks.size();
+        return mBooks == null ? 0 : mBooks.size();
     }
 
     /**
      * 返回记录数据选择状态的map
+     *
      * @return
      */
     public HashMap<BookBean, Integer> getBookMap() {

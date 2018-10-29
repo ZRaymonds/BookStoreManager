@@ -252,8 +252,8 @@ public class ScanBookActivity extends BaseActivity implements FileScanAdapter.On
         mDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
             @Override
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK){
-                    LogUtil.i("TAG","back");
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    LogUtil.i("TAG", "back");
                     mPresenter.onStopScanBooks();
                 }
                 return false;
@@ -299,12 +299,12 @@ public class ScanBookActivity extends BaseActivity implements FileScanAdapter.On
                 }
             }
 
-            if(!scanBook.isImported()){
+            if (!scanBook.isImported()) {
                 ++importableNum;
             }
         }
         mDialog.dismiss();
-        if (importableNum==0) {
+        if (importableNum == 0) {
             mFileOperate.setVisibility(View.INVISIBLE);
         } else {
             mFileOperate.setVisibility(View.VISIBLE);

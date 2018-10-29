@@ -18,12 +18,12 @@ public class BookApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        FreelineCore.init(this,this);
+        FreelineCore.init(this, this);
         sContext = getApplicationContext();
         FontUtils.init(sContext);
     }
 
-    public static Context getContext(){
+    public static Context getContext() {
         return sContext;
     }
 

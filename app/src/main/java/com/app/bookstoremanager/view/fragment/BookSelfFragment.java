@@ -57,7 +57,7 @@ public class BookSelfFragment extends BaseFragment implements ShelfBookAdapter.O
 
     @Override
     protected View initView(Bundle savedInstanceState) {
-        View view = View.inflate(mActivity,R.layout.fragment_book_self,null);
+        View view = View.inflate(mActivity, R.layout.fragment_book_self, null);
         return view;
     }
 

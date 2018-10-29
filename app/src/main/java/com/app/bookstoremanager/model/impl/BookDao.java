@@ -41,6 +41,7 @@ public class BookDao implements ShelfContact.Model, ScanContact.Model, ImportCon
     private static BookBeanDao sDao;
     private int totalNum;
     private File mFile = new File("");
+
     public BookDao() {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(BookApplication.getContext(), dbName);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -57,7 +58,7 @@ public class BookDao implements ShelfContact.Model, ScanContact.Model, ImportCon
 //        return sDao;
 //    }
 
-    public List<BookBean> loadAll(){
+    public List<BookBean> loadAll() {
         QueryBuilder queryBuilder = sDao.queryBuilder();
         return queryBuilder.build().listLazy();
     }
@@ -83,7 +84,7 @@ public class BookDao implements ShelfContact.Model, ScanContact.Model, ImportCon
             @Override
             public void subscribe(@NonNull ObservableEmitter<Boolean> e) throws Exception {
                 sDao.insertInTx(books);
-                Log.i("AAA","------------33333333333333333333333");
+                Log.i("AAA", "------------33333333333333333333333");
                 e.onNext(true);
             }
         }).compose(RxSchedulers.<Boolean>ioMain());
@@ -169,7 +170,7 @@ public class BookDao implements ShelfContact.Model, ScanContact.Model, ImportCon
             } else if (f.isDirectory() && !f.isHidden()) {
                 listFiles(f, rex, emitter);
             }
-            if (f.isDirectory()){
+            if (f.isDirectory()) {
 //                Log.d("AAA","name:"+f.getName()+"----isHidden:"+f.isHidden()+"---length:"+f.length());
             }
         }

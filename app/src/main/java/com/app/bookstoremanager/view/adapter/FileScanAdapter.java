@@ -77,7 +77,7 @@ public class FileScanAdapter extends RecyclerView.Adapter<FileScanAdapter.FileVi
     }
 
     private void select(ScanBook scanBook, Integer position) {
-        if(scanBook.isImported()) return;
+        if (scanBook.isImported()) return;
         if (mFileMap.get(scanBook) == 1) {
             mFileMap.put(scanBook, 2);
             mBack.unSelectFile(scanBook);

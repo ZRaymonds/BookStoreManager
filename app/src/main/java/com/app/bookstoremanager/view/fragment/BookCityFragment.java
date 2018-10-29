@@ -16,7 +16,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class BookCityFragment extends BaseFragment{
+public class BookCityFragment extends BaseFragment {
 
     @BindView(R.id.recycleview)
     RecyclerView mRecycleView;

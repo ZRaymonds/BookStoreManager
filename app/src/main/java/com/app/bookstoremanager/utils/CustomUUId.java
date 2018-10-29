@@ -37,9 +37,9 @@ public class CustomUUId {
     private final long workerId;
     private final long regionId;
 
-    public static CustomUUId get(){
-        if (sCustomUUID==null){
-            sCustomUUID = new CustomUUId(maxWorkerId,maxRegionId);
+    public static CustomUUId get() {
+        if (sCustomUUID == null) {
+            sCustomUUID = new CustomUUId(maxWorkerId, maxRegionId);
         }
         return sCustomUUID;
     }

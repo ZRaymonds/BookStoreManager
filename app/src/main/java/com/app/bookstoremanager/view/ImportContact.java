@@ -18,16 +18,19 @@ import io.reactivex.Observable;
 public interface ImportContact {
     interface View extends BaseView {
         void showScanBookList(List<ScanBook> files, int fileNum, int importableNum);
+
         void toShelf();
     }
 
     abstract class Presenter extends BasePresenter<Model, View> {
         public abstract void onAddBooks(List<ScanBook> files);
+
         public abstract void onGetFileList(File file);
     }
 
     interface Model extends BaseModel {
         Observable<Boolean> addBookList(List<BookBean> been);
+
         List<File> getFileList(File rootFile);
     }
 }

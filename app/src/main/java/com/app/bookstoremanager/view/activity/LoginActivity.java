@@ -74,8 +74,8 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     }
 
     @OnClick({R.id.tv_userRegister, R.id.back, R.id.btn_login})
-    public void onClick(View v){
-        switch (v.getId()){
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.tv_userRegister:
                 startActivity(new Intent(this, RegisterActivity.class));
                 break;
@@ -83,12 +83,12 @@ public class LoginActivity extends BaseActivity implements ILoginView {
                 finish();
                 break;
             case R.id.btn_login:
-                if (VerifyUtil.isConnect(mContext)){
-                    if (validateAccount(getLgUsername())&&validatePassword(getLgPassword())){
+                if (VerifyUtil.isConnect(mContext)) {
+                    if (validateAccount(getLgUsername()) && validatePassword(getLgPassword())) {
                         loginPresenter.setLogin();
                     }
-                }else {
-                    ToastUtil.show(this,"请检查网络设置");
+                } else {
+                    ToastUtil.show(this, "请检查网络设置");
                 }
                 break;
         }
@@ -96,17 +96,17 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
     @Override
     public void showLoginSuccess(int code, String msg) {
-        if (code == 200){
-            ToastUtil.show(this,msg);
+        if (code == 200) {
+            ToastUtil.show(this, msg);
             finish();
-        }else {
-            ToastUtil.show(this,msg);
+        } else {
+            ToastUtil.show(this, msg);
         }
     }
 
     @Override
     public void showLoginError(Exception e) {
-        ToastUtil.show(this,e.toString());
+        ToastUtil.show(this, e.toString());
     }
 
     @Override

@@ -21,7 +21,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.mActivity=(Activity) context;
+        this.mActivity = (Activity) context;
     }
 
     @Override
@@ -32,11 +32,11 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (getLayoutResId()!= 0){
+        if (getLayoutResId() != 0) {
             mRootView = inflater.inflate(getLayoutResId(), container, false);
             unbinder = ButterKnife.bind(this, mRootView);
             initView(savedInstanceState);
-        }else{
+        } else {
 
             mRootView = initView(savedInstanceState);
         }
@@ -74,7 +74,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (unbinder != null){
+        if (unbinder != null) {
             unbinder.unbind();
         }
     }
@@ -94,6 +94,7 @@ public abstract class BaseFragment extends Fragment {
      */
 
     protected abstract View initView(Bundle savedInstanceState);
+
     public abstract int getLayoutResId();
 
     /**

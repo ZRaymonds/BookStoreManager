@@ -26,7 +26,7 @@ public class BookMyFragment extends BaseFragment {
 
     @Override
     protected View initView(Bundle savedInstanceState) {
-        View view = View.inflate(mActivity,R.layout.fragment_book_my,null);
+        View view = View.inflate(mActivity, R.layout.fragment_book_my, null);
         return view;
     }
 
@@ -35,14 +35,14 @@ public class BookMyFragment extends BaseFragment {
         return R.layout.fragment_book_my;
     }
 
-    @OnClick({R.id.iv_loginView,R.id.iv_setting})
-    public void onClick(View v){
-        switch (v.getId()){
+    @OnClick({R.id.iv_loginView, R.id.iv_setting})
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.iv_loginView:
-                startActivity(new Intent(mActivity,LoginActivity.class));
+                startActivity(new Intent(mActivity, LoginActivity.class));
                 break;
             case R.id.iv_setting:
-                startActivity(new Intent(mActivity,SettingActivity.class));
+                startActivity(new Intent(mActivity, SettingActivity.class));
                 break;
         }
     }

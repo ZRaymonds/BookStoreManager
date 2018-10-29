@@ -19,7 +19,7 @@ import com.youth.banner.Transformer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecycleViewGridAdapter extends RecyclerView.Adapter<RecycleViewGridAdapter.MyViewHolder>{
+public class RecycleViewGridAdapter extends RecyclerView.Adapter<RecycleViewGridAdapter.MyViewHolder> {
 
     private static final int TYPE_HEADER = 0, TYPE_ITEM = 1, TYPE_FOOT = 2;
     private View headView;
@@ -36,7 +36,7 @@ public class RecycleViewGridAdapter extends RecyclerView.Adapter<RecycleViewGrid
     public ArrayList<RecommendInfo> mBirdsList;
 
     public interface ChangeGridLayoutManagerSpance {
-         void change(int size, boolean isAddHead, boolean isAddFoot);
+        void change(int size, boolean isAddHead, boolean isAddFoot);
     }
 
     //提供接口给 让LayoutManager根据添加尾部 头部与否来做判断 显示头部与底部的SpanSize要在添加头部和尾部之后
@@ -120,7 +120,7 @@ public class RecycleViewGridAdapter extends RecyclerView.Adapter<RecycleViewGrid
                     //必须最后调用的方法，启动轮播图。
                     .start();
         }
-        if (viewType == TYPE_ITEM){
+        if (viewType == TYPE_ITEM) {
             holder.textView.setText(mBirdsList.get(position).getName());
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -130,17 +130,17 @@ public class RecycleViewGridAdapter extends RecyclerView.Adapter<RecycleViewGrid
             });
             Glide.with(mContext).load(mBirdsList.get(position).getImageUrl()).into(holder.imageView);
         }
-        if (viewType == TYPE_FOOT){
+        if (viewType == TYPE_FOOT) {
             return;
         }
     }
 
     @Override
     public int getItemCount() {
-        return  mBirdsList.size();
+        return mBirdsList.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         public Banner mBanner;
         public ImageView imageView;

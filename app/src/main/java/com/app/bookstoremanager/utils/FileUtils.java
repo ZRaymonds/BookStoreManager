@@ -1,6 +1,7 @@
 package com.app.bookstoremanager.utils;
 
 import org.mozilla.universalchardet.UniversalDetector;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class FileUtils {
         List<File> fileList = new ArrayList<>();
         for (File file : files) {
             if (file.isDirectory() && !file.isHidden()) {
-                fileList.addAll(listFilterAllFolder(file,rex));
+                fileList.addAll(listFilterAllFolder(file, rex));
             } else if (file.isFile() && !file.isHidden() && file.canRead()) {
                 if (file.getName().endsWith(rex)) {
                     fileList.add(file);
@@ -69,6 +70,7 @@ public class FileUtils {
 
     /**
      * 获取文件编码
+     *
      * @param fileName
      * @return
      * @throws IOException

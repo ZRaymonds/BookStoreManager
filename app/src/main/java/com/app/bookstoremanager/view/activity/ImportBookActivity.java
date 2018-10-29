@@ -190,8 +190,8 @@ public class ImportBookActivity extends BaseActivity implements FileScanAdapter.
 
     @Override
     public void toShelf() {
-//        startActivity(BookSelfFragment.class);
-        finish();
+        startActivity(MainActivity.class);
+        this.finish();
     }
 
     @Override

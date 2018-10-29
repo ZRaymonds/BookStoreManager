@@ -55,7 +55,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         return R.layout.activity_register;
     }
 
-    @OnClick({R.id.btn_register,R.id.back})
+    @OnClick({R.id.btn_register, R.id.back})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_register:
@@ -82,10 +82,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
 
     @Override
     public void showRegisterSuccess(int code, String msg) {
-        if (code == 200){
+        if (code == 200) {
             ToastUtil.show(this, msg);
             finish();
-        }else {
+        } else {
             ToastUtil.show(this, msg);
         }
     }

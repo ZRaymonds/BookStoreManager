@@ -44,13 +44,13 @@ public class IUpdateModelImpl implements IUpdateModel {
                     public void onNext(UpdateInfo updateInfo) {
                         UpdateInfo.DataBean dataBean = updateInfo.getData();
                         listBeans = dataBean.getList();
-                        for (int i=0;i<listBeans.size();i++){
+                        for (int i = 0; i < listBeans.size(); i++) {
                             int version_code = listBeans.get(i).getVersion_code();
                             String file_name = listBeans.get(i).getFile_name();
                             String file_url = listBeans.get(i).getFile_url();
-                            LogUtil.d("TAG","versionCode is "+version_code);
-                            LogUtil.d("TAG","file_name is "+file_name);
-                            LogUtil.d("TAG","file_url is "+file_url);
+                            LogUtil.d("TAG", "versionCode is " + version_code);
+                            LogUtil.d("TAG", "file_name is " + file_name);
+                            LogUtil.d("TAG", "file_url is " + file_url);
                         }
                         onNetListener.onSuccess(updateInfo);
                     }

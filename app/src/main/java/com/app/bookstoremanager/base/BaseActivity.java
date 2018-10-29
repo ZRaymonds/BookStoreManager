@@ -32,10 +32,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * Activity跳转
+     *
      * @param aClass
      */
     public void startActivity(Class<?> aClass) {
-        super.startActivity(new Intent(BaseActivity.this,aClass));
+        super.startActivity(new Intent(BaseActivity.this, aClass));
+        finish();
     }
 
     @Override
