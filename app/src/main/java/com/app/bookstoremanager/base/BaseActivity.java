@@ -1,10 +1,15 @@
 package com.app.bookstoremanager.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import com.app.bookstoremanager.R;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -23,6 +28,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+    /**
+     * Activity跳转
+     * @param aClass
+     */
+    public void startActivity(Class<?> aClass) {
+        super.startActivity(new Intent(BaseActivity.this,aClass));
     }
 
     @Override

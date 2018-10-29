@@ -29,26 +29,26 @@ public class BookCityFragment extends BaseFragment{
 
     private final String names[] = {
             "Eclair",
+            "Eclair",
             "Froyo",
             "Gingerbread",
             "Honeycomb",
-            "Ice Cream Sandwich",
+            "Ice Cream",
             "Jelly Bean",
-            "Ice Cream Sandwich",
-            "Gingerbread",
-            "Gingerbread",
-            "Ice Cream Sandwich",
+            "Jelly Bean",
+            "Ice Cream",
+            "Ice Cream",
     };
     private final String imageUrls[] = {
-            "http://hawksaloft.org/wp-content/uploads/2012/08/614612316_20090805-_mg_3411-rufous-hummingbird-5x7.jpg",
-            "http://www.gregscott.com/gjs_2007_spring/hummingbird/20070311_1948_100_0560.rufous_humminbird.jpg",
-            "http://mosthdwallpapers.com/wp-content/uploads/2016/06/Flying-Hummingbird-Pictures.jpg",
-            "http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg",
-            "https://wallpapercave.com/wp/alkKAoC.jpg",
-            "http://naturecanada.ca/wp-content/uploads/2014/07/Ruby-throat-Hummingbird-shutterstock_1953533.jpg",
-            "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=345497051,870782541&fm=11&gp=0.jpg",
             "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
-            "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2365926110,751802226&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
             "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
     };
 
@@ -65,10 +65,10 @@ public class BookCityFragment extends BaseFragment{
         list_path = new ArrayList<>();
         //放标题的集合
         list_title = new ArrayList<>();
-        list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg");
-        list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic259ohaj30ci08c74r.jpg");
-        list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg");
-        list_path.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg");
+        list_path.add("http://111.230.204.150/img/examples/lun01.jpg");
+        list_path.add("http://111.230.204.150/img/examples/lun02.jpg");
+        list_path.add("http://111.230.204.150/img/examples/lun03.jpg");
+        list_path.add("http://111.230.204.150/img/examples/lun02.jpg");
         list_title.add("好好学习");
         list_title.add("天天向上");
         list_title.add("热爱劳动");

@@ -15,4 +15,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="all_select">全选</string>
+    <string name="all_un_select">全不选</string>
+    <string name="delete">删除</string>
+    <string name="import_shelf">导入书架</string>
+    <string name="scan">立即扫描</string>
+    <string name="str_pre_chapter">上一章</string>
+    <string name="str_next_chapter">下一章</string>
+    <string name="str_default">默认</string>
 </resources>

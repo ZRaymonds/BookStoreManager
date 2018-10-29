@@ -25,7 +25,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-        mCountDownTextView.setText("3s 跳过");
+        mCountDownTextView.setText("3s | 跳过");
         mCountDownTimer = new MyCountDownTimer(4000,1000);
         mCountDownTimer.start();
         handler = new Handler();
@@ -84,7 +84,7 @@ public class SplashActivity extends BaseActivity {
         }
 
         public void onTick(long millisUntilFinished) {
-            mCountDownTextView.setText( millisUntilFinished / 1000 + "s 跳过");
+            mCountDownTextView.setText( millisUntilFinished / 1000 + "s | 跳过");
         }
 
     }

@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_import_book"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/shelf_bg_color"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.activity.ImportBookActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/import_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="本机书籍"
+        >
 
-    <RelativeLayout
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/currentPath"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:background="@color/light_black2"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/bookRecycle"
+            android:id="@+id/scan_recycle"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
 
         </android.support.v7.widget.RecyclerView>
 
         <LinearLayout
-            android:id="@+id/book_operate"
+            android:id="@+id/file_operate"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:background="@color/colorPrimary"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="invisible"
-            android:layout_marginBottom="60dp">
+            >
 
             <TextView
-                android:id="@+id/book_delete"
+                android:id="@+id/book_add"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:background="@drawable/select_touch"
                 android:gravity="center"
-                android:text="@string/delete"
+                android:text="@string/import_shelf"
                 android:textColor="@color/white"
                 android:textSize="16dp"
 
@@ -46,7 +65,8 @@
             <View
                 android:layout_width="0.5dp"
                 android:layout_height="32dp"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@color/colorPrimaryDark"
+                />
 
             <TextView
                 android:id="@+id/book_all_select"
@@ -57,20 +77,9 @@
                 android:gravity="center"
                 android:text="@string/all_select"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                />
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/add_book"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="14dp"
-            android:layout_marginBottom="115dp"
-            android:background="@color/shelf_bg_color"
-            app:elevation="3dp"
-            app:fabSize="mini"
-            app:srcCompat="@drawable/ic_add_black_16dp" />
-    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
