@@ -9,6 +9,7 @@ import android.view.View;
 import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.base.BaseFragment;
 import com.app.bookstoremanager.bean.RecommendInfo;
+import com.app.bookstoremanager.common.view.GridSpacingItemDecoration;
 import com.app.bookstoremanager.view.adapter.RecycleViewGridAdapter;
 
 import java.util.ArrayList;
@@ -110,6 +111,7 @@ public class BookCityFragment extends BaseFragment {
         });
         mRecycleView.setHasFixedSize(true);
         mRecycleView.setLayoutManager(gridLayoutManager);
+//        mRecycleView.addItemDecoration(new GridSpacingItemDecoration(3,1,true));
         mRecycleView.setAdapter(recycleViewAdapter);
     }
 

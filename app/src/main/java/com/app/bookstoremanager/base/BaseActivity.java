@@ -7,17 +7,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.common.rx.RxManager;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    public RxManager mRxManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
         ButterKnife.bind(this);
+        mRxManager = new RxManager();
         initData(savedInstanceState);
     }
 
@@ -58,6 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mRxManager.clear();
     }
 
     @Override

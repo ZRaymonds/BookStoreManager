@@ -275,8 +275,8 @@ public class ScanBookActivity extends BaseActivity implements FileScanAdapter.On
 
     @Override
     public void toShelf() {
-        startActivity(MainActivity.class);
-        this.finish();
+//        startActivity(MainActivity.class);
+        finish();
     }
 
     @Override

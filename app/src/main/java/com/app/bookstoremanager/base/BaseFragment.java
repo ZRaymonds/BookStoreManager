@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.app.bookstoremanager.common.rx.RxManager;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -17,6 +19,7 @@ public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     public Unbinder unbinder;
     private View mRootView;
+    public RxManager mRxManager;
 
     @Override
     public void onAttach(Context context) {
@@ -32,6 +35,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mRxManager = new RxManager();
         if (getLayoutResId() != 0) {
             mRootView = inflater.inflate(getLayoutResId(), container, false);
             unbinder = ButterKnife.bind(this, mRootView);
@@ -77,6 +81,7 @@ public abstract class BaseFragment extends Fragment {
         if (unbinder != null) {
             unbinder.unbind();
         }
+        mRxManager.clear();
     }
 
     @Override

@@ -10,7 +10,11 @@
     <color name="normal_color">#cdcdcd</color>
     <color name="black">#000000</color>
 
+    <color name="light_black">#c4c2c2</color>
+    <color name="tab_text_color">#FF7815</color>
+    <color name="orange">#FF6518</color>
     <color name="shelf_bg_color">#ECEDEF</color>
+    <color name="gray_black">#999696</color>
     <color name="light_black2">#f2efef</color>
     <color name="bg_library">#f1f1f1</color>
     <color name="tv_text_addshelf_nor">#ffffff</color>
@@ -19,4 +23,29 @@
     <color name="tv_text_addshelf_deep_pre">#587A8A</color>
     <color name="btn_bg_press">#c1c1c1</color>
     <color name="btn_bg_press_2">#aaaaaa</color>
+
+    <!-- 阅读界面 -->
+
+    <color name="bg_black">#1F1D1B</color>
+    <color name="icon_white">#FFFBF7</color>
+
+    <!-- 阅读背景 -->
+    <color name="read_yellow">#CEC29C</color>
+    <color name="read_white">#FFFFFF</color>
+    <color name="read_green">#CCF0CF</color>
+    <color name="read_gray">#ACA899</color>
+    <color name="read_night">#000000</color>
+
+    <!-- 阅读画布 -->
+    <color name="statusColor">#1F1D1B</color>
+
+    <!-- 阅读字体颜色 -->
+
+    <color name="follow_read_yellow">#2C2C2C</color>
+    <color name="follow_read_green">#2F332D</color>
+    <color name="follow_read_gray">#383429</color>
+
+    <color name="follow_read_black">#000000</color>
+    <color name="follow_read_white">#888888</color>
+
 </resources>
