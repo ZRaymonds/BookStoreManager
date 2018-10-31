@@ -27,8 +27,7 @@
             android:background="@color/colorPrimary"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="invisible"
-            android:layout_marginBottom="55dp">
+            android:visibility="invisible">
 
             <TextView
                 android:id="@+id/book_delete"
@@ -67,7 +66,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginRight="14dp"
-            android:layout_marginBottom="115dp"
+            android:layout_marginBottom="60dp"
             android:background="@color/shelf_bg_color"
             app:elevation="3dp"
             app:fabSize="mini"

@@ -1,6 +1,7 @@
 package com.app.bookstoremanager.view.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +25,10 @@ import com.app.bookstoremanager.common.FileComparater;
 import com.app.bookstoremanager.model.impl.BookDao;
 import com.app.bookstoremanager.presenter.ScanPresenter;
 import com.app.bookstoremanager.utils.LogUtil;
+import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.view.ScanContact;
 import com.app.bookstoremanager.view.adapter.FileScanAdapter;
+import com.app.bookstoremanager.view.fragment.BookSelfFragment;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -276,6 +279,7 @@ public class ScanBookActivity extends BaseActivity implements FileScanAdapter.On
     @Override
     public void toShelf() {
 //        startActivity(MainActivity.class);
+        ToastUtil.show(this,"加入书架成功！");
         finish();
     }
 

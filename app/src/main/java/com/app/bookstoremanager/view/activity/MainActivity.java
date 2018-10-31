@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.app.bookstoremanager.R;
+import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.view.fragment.BookCityFragment;
 import com.app.bookstoremanager.view.fragment.BookIdeaFragment;
 import com.app.bookstoremanager.view.fragment.BookMyFragment;
@@ -21,7 +22,7 @@ import com.app.bookstoremanager.view.fragment.BookSelfFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.mainContent)
     FrameLayout mainContent;
@@ -40,9 +41,7 @@ public class MainActivity extends FragmentActivity {
     private long currentBackTime = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void initData(Bundle savedInstanceState) {
         ButterKnife.bind(this);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fragmentManager = getSupportFragmentManager();
@@ -54,6 +53,11 @@ public class MainActivity extends FragmentActivity {
         addFragment(bookMyFragment);
         hideFragment(bookMyFragment);
         addFragment(bookCityFragment);
+    }
+
+    @Override
+    public int getLayoutResId() {
+        return R.layout.activity_main;
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

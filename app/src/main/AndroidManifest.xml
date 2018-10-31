@@ -28,8 +28,8 @@
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.SettingActivity" />
-        <activity android:name=".view.activity.ImportBookActivity"/>
-        <activity android:name=".view.activity.ScanBookActivity"/>
+        <activity android:name=".view.activity.ImportBookActivity" />
+        <activity android:name=".view.activity.ScanBookActivity" />
         <activity android:name=".view.activity.ReadBookActivity"/>
     </application>
 

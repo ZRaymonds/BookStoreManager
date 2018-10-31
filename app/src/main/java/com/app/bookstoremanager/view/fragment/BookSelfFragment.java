@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -124,8 +125,8 @@ public class BookSelfFragment extends BaseFragment implements ShelfBookAdapter.O
                 allSelectBook(mAdapter.getBookMap());
                 break;
             case R.id.add_book:
-                Intent intent = new Intent(getActivity(), ImportBookActivity.class);
-                getActivity().startActivity(intent);
+                Intent intent = new Intent(mActivity, ImportBookActivity.class);
+                mActivity.startActivity(intent);
                 break;
         }
     }

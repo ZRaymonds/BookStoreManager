@@ -16,6 +16,7 @@ import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.bean.ScanBook;
 import com.app.bookstoremanager.model.impl.BookDao;
 import com.app.bookstoremanager.presenter.ImportPresenter;
+import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.view.ImportContact;
 import com.app.bookstoremanager.view.adapter.FileScanAdapter;
 import com.app.bookstoremanager.view.fragment.BookSelfFragment;
@@ -191,7 +192,8 @@ public class ImportBookActivity extends BaseActivity implements FileScanAdapter.
     @Override
     public void toShelf() {
 //        startActivity(MainActivity.class);
-        finish();
+        ToastUtil.show(this,"加入书架成功！");
+        this.finish();
     }
 
     @Override
