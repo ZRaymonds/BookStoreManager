@@ -7,4 +7,6 @@ public interface IUpdateView {
 
     void showUpdateDialog(String fileUrl);
 
+    void showUpdateError(Exception e);
+
 }

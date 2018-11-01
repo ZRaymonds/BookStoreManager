@@ -14,7 +14,7 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class IUpdateModelImpl implements IUpdateModel {
+public class UpdateModelImpl implements IUpdateModel {
 
 
     @Override

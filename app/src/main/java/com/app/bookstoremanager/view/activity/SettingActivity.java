@@ -21,6 +21,7 @@ import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.bean.UpdateInfo;
 import com.app.bookstoremanager.presenter.UpdatePresenter;
+import com.app.bookstoremanager.utils.LogUtil;
 import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.view.IUpdateView;
 
@@ -103,6 +104,12 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
         alertDialog.setCancelable(false);
         // 显示对话框
         alertDialog.show();
+    }
+
+    @Override
+    public void showUpdateError(Exception e) {
+        ToastUtil.show(this, e.toString());
+        LogUtil.d("TAG", e.toString());
     }
 
     /**

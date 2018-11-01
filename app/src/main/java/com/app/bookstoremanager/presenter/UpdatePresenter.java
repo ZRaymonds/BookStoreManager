@@ -4,8 +4,7 @@ package com.app.bookstoremanager.presenter;
 import com.app.bookstoremanager.BuildConfig;
 import com.app.bookstoremanager.bean.UpdateInfo;
 import com.app.bookstoremanager.callBack.OnNetListener;
-import com.app.bookstoremanager.model.IUpdateModel;
-import com.app.bookstoremanager.model.impl.IUpdateModelImpl;
+import com.app.bookstoremanager.model.impl.UpdateModelImpl;
 import com.app.bookstoremanager.utils.LogUtil;
 import com.app.bookstoremanager.view.IUpdateView;
 import com.google.gson.Gson;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class UpdatePresenter {
 
-    private IUpdateModel iUpdateModel;
+    private UpdateModelImpl iUpdateModel;
 
     private IUpdateView iUpdateView;
 
@@ -24,7 +23,7 @@ public class UpdatePresenter {
 
     public UpdatePresenter(IUpdateView iUpdateView) {
         this.iUpdateView = iUpdateView;
-        iUpdateModel = new IUpdateModelImpl();
+        iUpdateModel = new UpdateModelImpl();
     }
 
     public void getUpdate() {
@@ -50,7 +49,7 @@ public class UpdatePresenter {
 
             @Override
             public void onFailure(Exception e) {
-
+                iUpdateView.showUpdateError(e);
             }
         });
     }

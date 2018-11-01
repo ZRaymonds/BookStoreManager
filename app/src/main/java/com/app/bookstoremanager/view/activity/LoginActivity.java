@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.base.BaseActivity;
 import com.app.bookstoremanager.presenter.LoginPresenter;
+import com.app.bookstoremanager.utils.LogUtil;
 import com.app.bookstoremanager.utils.ToastUtil;
 import com.app.bookstoremanager.utils.VerifyUtil;
 import com.app.bookstoremanager.view.ILoginView;
@@ -107,6 +108,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     @Override
     public void showLoginError(Exception e) {
         ToastUtil.show(this, e.toString());
+        LogUtil.d("TAG", e.toString());
     }
 
     @Override
