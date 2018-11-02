@@ -29,28 +29,28 @@ public class BookCityFragment extends BaseFragment {
     private ArrayList<String> list_title;
 
     private final String names[] = {
-            "Eclair",
-            "Eclair",
-            "Froyo",
-            "Gingerbread",
-            "Honeycomb",
-            "Ice Cream",
-            "Jelly Bean",
-            "Jelly Bean",
-            "Ice Cream",
-            "Ice Cream",
+            "飘",
+            "飘",
+            "深入理解计算机系统英文原版",
+            "夜莺与玫瑰",
+            "小王子",
+            "雅舍谈吃",
+            "被人遗忘的人",
+            "论摄影",
+            "荒野之歌",
+            "乌合之众",
     };
     private final String imageUrls[] = {
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2855051181,3062079698&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2552196253,1508996934&fm=26&gp=0.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023165753075_973580.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023165753075_973580.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023165333411_738415.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023163344967_987827.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023163332845_389741.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023101919764_944058.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023101608846_378596.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023101308922_800869.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023101035051_648230.jpg",
+            "http://192.168.1.138:8080/image/upload/20181023095631587_032144.jpg",
     };
 
 
