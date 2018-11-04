@@ -9,11 +9,9 @@ import android.view.View;
 import com.app.bookstoremanager.R;
 import com.app.bookstoremanager.base.BaseFragment;
 import com.app.bookstoremanager.bean.RecommendInfo;
-import com.app.bookstoremanager.common.view.GridSpacingItemDecoration;
 import com.app.bookstoremanager.view.adapter.RecycleViewGridAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 
@@ -35,22 +33,22 @@ public class BookCityFragment extends BaseFragment {
             "夜莺与玫瑰",
             "小王子",
             "雅舍谈吃",
-            "被人遗忘的人",
+            "鬼吹灯之巫峡棺山",
             "论摄影",
             "荒野之歌",
             "乌合之众",
     };
     private final String imageUrls[] = {
-            "http://192.168.1.138:8080/image/upload/20181023165753075_973580.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023165753075_973580.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023165333411_738415.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023163344967_987827.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023163332845_389741.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023101919764_944058.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023101608846_378596.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023101308922_800869.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023101035051_648230.jpg",
-            "http://192.168.1.138:8080/image/upload/20181023095631587_032144.jpg",
+            "https://img.alicdn.com/imgextra/i2/TB12XLnOXXXXXapXXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://img.alicdn.com/imgextra/i2/TB12XLnOXXXXXapXXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://gd1.alicdn.com/imgextra/i2/0/O1CN011GS01fUtQphxCH6_!!0-item_pic.jpg_400x400.jpg",
+            "https://img.alicdn.com/imgextra/i4/912382184/TB1NUXChQomBKNjSZFqXXXtqVXa_!!0-item_pic.jpg_430x430q90.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=2656405976,1982272326&fm=214&gp=0.jpg",
+            "https://img.alicdn.com/imgextra/i1/671432529/TB1ZyMUbzgy_uJjSZJnXXbuOXXa_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://img.alicdn.com/imgextra/i3/1776766073/TB1EtMTukZmBKNjSZPiXXXFNVXa_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://img.alicdn.com/imgextra/i1/TB1XjRzKVXXXXX3XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://img.alicdn.com/imgextra/i2/TB1FP1XRVXXXXbiXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+            "https://img.alicdn.com/imgextra/i1/1049653664/TB1SQQya.4WMKJjSspmXXcznpXa_!!0-item_pic.jpg_430x430q90.jpg",
     };
 
 
