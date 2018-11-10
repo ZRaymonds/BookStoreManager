@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
 
     BookCityFragment bookCityFragment = new BookCityFragment();
     BookSelfFragment bookSelfFragment = new BookSelfFragment();
-    BookIdeaFragment bookIdeaFragment = new BookIdeaFragment();
+    //    BookIdeaFragment bookIdeaFragment = new BookIdeaFragment();
     BookMyFragment bookMyFragment = new BookMyFragment();
 
     private long lastBackTime = 0;
@@ -48,8 +48,8 @@ public class MainActivity extends BaseActivity {
 
         addFragment(bookSelfFragment);
         hideFragment(bookSelfFragment);
-        addFragment(bookIdeaFragment);
-        hideFragment(bookIdeaFragment);
+//        addFragment(bookIdeaFragment);
+//        hideFragment(bookIdeaFragment);
         addFragment(bookMyFragment);
         hideFragment(bookMyFragment);
         addFragment(bookCityFragment);
@@ -68,25 +68,25 @@ public class MainActivity extends BaseActivity {
                 case R.id.book_city:
                     showFragment(bookCityFragment);
                     hideFragment(bookSelfFragment);
-                    hideFragment(bookIdeaFragment);
+//                    hideFragment(bookIdeaFragment);
                     hideFragment(bookMyFragment);
                     return true;
                 case R.id.book_self:
                     showFragment(bookSelfFragment);
                     hideFragment(bookCityFragment);
-                    hideFragment(bookIdeaFragment);
+//                    hideFragment(bookIdeaFragment);
                     hideFragment(bookMyFragment);
                     return true;
-                case R.id.book_idea:
-                    showFragment(bookIdeaFragment);
-                    hideFragment(bookSelfFragment);
-                    hideFragment(bookCityFragment);
-                    hideFragment(bookMyFragment);
-                    return true;
+//                case R.id.book_idea:
+//                    showFragment(bookIdeaFragment);
+//                    hideFragment(bookSelfFragment);
+//                    hideFragment(bookCityFragment);
+//                    hideFragment(bookMyFragment);
+//                    return true;
                 case R.id.book_my:
                     showFragment(bookMyFragment);
                     hideFragment(bookSelfFragment);
-                    hideFragment(bookIdeaFragment);
+//                    hideFragment(bookIdeaFragment);
                     hideFragment(bookCityFragment);
                     return true;
             }

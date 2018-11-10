@@ -92,8 +92,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
 
     @Override
     public void showRegisterError(Exception e) {
-        ToastUtil.show(this, e.toString());
-        LogUtil.d("TAG", e.toString());
+        ToastUtil.show(this, e.getMessage());
+        LogUtil.d("TAG", e.getMessage());
     }
 
     @Override

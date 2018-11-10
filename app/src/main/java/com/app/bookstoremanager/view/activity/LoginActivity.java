@@ -107,8 +107,8 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
     @Override
     public void showLoginError(Exception e) {
-        ToastUtil.show(this, e.toString());
-        LogUtil.d("TAG", e.toString());
+        ToastUtil.show(this, e.getMessage());
+        LogUtil.d("TAG", e.getMessage());
     }
 
     @Override

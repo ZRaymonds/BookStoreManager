@@ -1,20 +1,15 @@
 package com.app.bookstoremanager.view.activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.bookstoremanager.BuildConfig;
 import com.app.bookstoremanager.R;
@@ -108,12 +103,13 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
 
     @Override
     public void showUpdateError(Exception e) {
-        ToastUtil.show(this, e.toString());
-        LogUtil.d("TAG", e.toString());
+        ToastUtil.show(this, e.getMessage());
+        LogUtil.d("TAG", e.getMessage());
     }
 
     /**
      * 下载新版本程序
+     *
      * @param fileUrl
      */
     private void loadNewVersionProgress(String fileUrl) {
@@ -135,7 +131,6 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
                     pd.dismiss(); //结束掉进度条对话框
                 } catch (Exception e) {
                     //下载apk失败
-                    ToastUtil.show(SettingActivity.this,"下载新版本失败");
                     e.printStackTrace();
                 }
             }
@@ -151,7 +146,8 @@ public class SettingActivity extends BaseActivity implements IUpdateView {
         intent.setAction(Intent.ACTION_VIEW);
         //执行的数据类型
         intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-        startActivity(intent);
+//        startActivity(intent);
+        startActivity(Intent.createChooser(intent, "installApk"));
     }
 
     /**
