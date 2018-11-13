@@ -19,7 +19,7 @@ import rx.Observable;
 public interface ServerApi {
 
     @FormUrlEncoded
-    @POST(Api.REGISTR)
+    @POST(Api.REGISTER)
     Observable<UserBean> register(@FieldMap Map<String, String> map);
 
     @FormUrlEncoded
