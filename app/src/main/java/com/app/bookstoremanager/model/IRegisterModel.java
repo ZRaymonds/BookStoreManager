@@ -5,6 +5,6 @@ import com.app.bookstoremanager.callBack.OnNetListener;
 
 public interface IRegisterModel {
 
-    void getRegsiter(String mobile_phone, String password, final OnNetListener<UserBean> onNetListener);
+    void getRegister(String mobile_phone, String password, final OnNetListener<UserBean> onNetListener);
 
 }

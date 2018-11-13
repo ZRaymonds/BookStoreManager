@@ -18,7 +18,7 @@ public class RegisterPresenter {
     }
 
     public void setRegister() {
-        registerModel.getRegsiter(registerView.getRgUsername(), registerView.getRgPassword(), new OnNetListener<UserBean>() {
+        registerModel.getRegister(registerView.getRgUsername(), registerView.getRgPassword(), new OnNetListener<UserBean>() {
             @Override
             public void onSuccess(UserBean userBean) {
                 int code = userBean.getCode();

@@ -18,7 +18,7 @@ public class RegisterModelImpl implements IRegisterModel {
     Map<String, String> map = new HashMap<>();
 
     @Override
-    public void getRegsiter(String mobile_phone, String password, final OnNetListener<UserBean> onNetListener) {
+    public void getRegister(String mobile_phone, String password, final OnNetListener<UserBean> onNetListener) {
         map.put("mobile_phone", mobile_phone);
         map.put("password", password);
         ServerApi serverApi = RetrofitHelper.getServerApi();
